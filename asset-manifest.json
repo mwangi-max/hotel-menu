@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hotel-menu/static/css/main.a18148a2.css",
+    "main.js": "/hotel-menu/static/js/main.97fae554.js",
+    "index.html": "/hotel-menu/index.html",
+    "main.a18148a2.css.map": "/hotel-menu/static/css/main.a18148a2.css.map",
+    "main.97fae554.js.map": "/hotel-menu/static/js/main.97fae554.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a18148a2.css",
+    "static/js/main.97fae554.js"
+  ]
+}
