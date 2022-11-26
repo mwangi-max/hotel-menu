@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {useState} from 'react';
+import Category from './Category';
+import Menu from './Menu';
+import data from './data';
 
-function App() {
+const allCategories =['all', ...new Set(data.map((item)=>item.category))];
+
+
+const App = () => {
+  const [menuItems,setMenuItems]= useState(data);
+  const [categories,setCategories] = useState(allCategories);
+
+  const filterCategories = (category)=>{
+    if(category === 'all'){
+      setMenuItems(data);
+      return;
+    }
+    let newItems = data.filter((item)=>{
+      return item.category === category;
+    })
+    setMenuItems(newItems);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Category filterCategories={filterCategories} categories={categories}/>
+    <Menu items={menuItems}/>
+   </>
+  )
 }
 
-export default App;
+export default App
